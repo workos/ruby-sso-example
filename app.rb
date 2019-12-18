@@ -2,10 +2,15 @@
 
 require 'sinatra'
 require 'workos'
+require 'json'
 
 # Get your project_id and configure your domain and
 # redirect_uris at https://dashboard.workos.com/sso/configuration
-DOMAIN = 'acme.com'
+# DOMAIN = 'acme.com'
+# PROJECT_ID = 'project_01DG5TGK363GRVXP3ZS40WNGEZ'
+# REDIRECT_URI = 'http://localhost:4567/callback'
+
+DOMAIN = 'adifferentdomain.com'
 PROJECT_ID = 'project_01DG5TGK363GRVXP3ZS40WNGEZ'
 REDIRECT_URI = 'http://localhost:4567/callback'
 
@@ -28,7 +33,7 @@ get '/auth' do
   authorization_url = WorkOS::SSO.authorization_url(
     domain: DOMAIN,
     project_id: PROJECT_ID,
-    redirect_uri: REDIRECT_URI
+    redirect_uri: REDIRECT_URI,
   )
 
   redirect authorization_url
@@ -41,7 +46,7 @@ get '/callback' do
     redirect_uri: REDIRECT_URI
   )
 
-  session[:user] = profile
+  session[:user] = profile.to_json
 
   redirect '/'
 end

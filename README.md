@@ -32,4 +32,4 @@ ruby app.rb
 
 Head to `http://localhost:4567` and click Sign In to authenticate!
 
-For more information, see the [WorkOS Ruby SDK documentation](https://dashboard.workos.com/docs/sdk/ruby).
+For more information, see the [WorkOS Ruby SDK documentation](https://docs.workos.com/sdk/ruby).

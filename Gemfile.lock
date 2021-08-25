@@ -1,26 +1,28 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    dotenv (2.7.6)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     rack (2.2.3)
-    rack-protection (2.0.8.1)
+    rack-protection (2.1.0)
       rack
-    ruby2_keywords (0.0.2)
-    sinatra (2.0.8.1)
+    ruby2_keywords (0.0.5)
+    sinatra (2.1.0)
       mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.8.1)
+      rack (~> 2.2)
+      rack-protection (= 2.1.0)
       tilt (~> 2.0)
-    sorbet-runtime (0.5.5657)
+    sorbet-runtime (0.5.9070)
     tilt (2.0.10)
-    workos (0.3.2)
+    workos (1.5.0)
       sorbet-runtime (~> 0.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   sinatra
   workos
 
